@@ -1,7 +1,12 @@
 <button (click)="start_work()">Start work!</button>
 <button (click)="end_work()">End work!</button>
-<div *ngIf="is_on">Time measurement started</div>
-<div *ngIf="!is_on">
-    <p>You've worked so many seconds today: {{time}}!</p>
-    <p>Hours: {{hours}} Minutes: {{minutes}}</p>
+
+<div>
+    <p>Hours: {{hours}} Minutes: {{minutes}} Seconds: {{seconds}}</p>
+</div>
+
+<div>
+    <p *ngIf="is_on" >Time measurement started</p>
+    <p>You started your work at {{start_hours}}:{{start_minutes}}</p>
+    <p>You ended your work at {{end_hours}}:{{end_minutes}}</p>
 </div>
