@@ -1,0 +1,12 @@
+<div class="login-box">
+    <p>Login</p>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div>
+          <input type="login" id="login" name="login" placeholder="login" [(ngModel)]="login" required>
+        </div>
+        <div>
+          <input type="password" id="password" name="password" placeholder="password" [(ngModel)]="password" required>
+        </div>
+        <button type="submit" [disabled]="!loginForm.form.valid">Zaloguj się</button>
+      </form>
+</div>

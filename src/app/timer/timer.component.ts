@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'wta-timer',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
+
+  parentComponent: AppComponent;
+
+  constructor(private appComponent: AppComponent) {
+    this.parentComponent = appComponent;
+  }
 
   start_time = new Date();
   start_hours: any;
@@ -59,5 +66,9 @@ export class TimerComponent implements OnInit {
     this.seconds = Math.floor(this.time % 60);
     this.minutes = Math.floor((this.time / 60) % 60);
     this.hours = Math.floor(this.time / 3600);
+  }
+
+  logout() {
+    this.parentComponent.is_login_true = false;
   }
 }
